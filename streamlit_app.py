@@ -20,38 +20,21 @@ Fill in the fields below and click **Predict**.
 """)
 
 # Input fields for user data
-age = st.number_input("Age", min_value=0, max_value=120, step=1, value=65)
-baseline_psa = st.number_input("Baseline PSA", min_value=0.0, value=12.5, step=0.1)
-post_treatment_psa = st.number_input("Post-treatment PSA", min_value=0.0, value=2.3, step=0.1)
-gleason_score = st.number_input("Gleason Score", min_value=0, max_value=10, step=1, value=7)
-t_stage = st.number_input("T Stage", min_value=0, max_value=4, step=1, value=2)
-n_stage = st.number_input("N Stage", min_value=0, max_value=1, step=1, value=1)
-m_stage = st.number_input("M Stage", min_value=0, max_value=1, step=1, value=0)
-bcr_status = st.number_input("BCR Status (0/1)", min_value=0, max_value=1, step=1, value=0)
-time_to_recurrence = st.number_input("Time to Recurrence (months)", min_value=0.0, step=0.1, value=8.3)
-family_history = st.number_input("Family History (0/1)", min_value=0, max_value=1, step=1, value=0)
-comorbidities = st.number_input("Comorbidities (0/1)", min_value=0, max_value=1, step=1, value=0)
-psa_month_1 = st.number_input("PSA Month 1", min_value=0.0, step=0.1, value=2.5)
-psa_month_3 = st.number_input("PSA Month 3", min_value=0.0, step=0.1, value=2.7)
-psa_month_6 = st.number_input("PSA Month 6", min_value=0.0, step=0.1, value=3.0)
-psa_month_12 = st.number_input("PSA Month 12", min_value=0.0, step=0.1, value=3.5)
-race_black = st.number_input("Race: Black (0/1)", min_value=0, max_value=1, step=1, value=0)
-race_other = st.number_input("Race: Other (0/1)", min_value=0, max_value=1, step=1, value=0)
-race_white = st.number_input("Race: White (0/1)", min_value=0, max_value=1, step=1, value=1)
-ethnicity_non_hispanic = st.number_input("Ethnicity: Non-Hispanic (0/1)", min_value=0, max_value=1, step=1, value=1)
-region_north = st.number_input("Region: North (0/1)", min_value=0, max_value=1, step=1, value=0)
-region_south = st.number_input("Region: South (0/1)", min_value=0, max_value=1, step=1, value=1)
-region_west = st.number_input("Region: West (0/1)", min_value=0, max_value=1, step=1, value=0)
-treatment_radiation = st.number_input("Treatment: Radiation Therapy (0/1)", min_value=0, max_value=1, step=1, value=1)
-treatment_surgery = st.number_input("Treatment: Surgery (0/1)", min_value=0, max_value=1, step=1, value=0)
+home = st.number_input("Home", min_value=-3.715828242, max_value=1.7989894586228334, step=0.011029635400778294, value=-3.715828242)
+pcv = st.number_input("PCV", min_value=-3.95699001, max_value=1.7527489142768187, value=-3.95699001, step=0.011419477847590169)
+rc = st.number_input("Rc", min_value=-3.354615389, max_value=3.9102015151235343, value=-3.354615389, step=0.014529633808600693)
+sc = st.number_input("Sc", min_value=-0.440194033, max_value=14.401746112931715, step=0.029683880292612562, value=-0.440194033)
+sg = st.number_input("Sg", min_value=-2.532423687, max_value=1.2364234115245358, step=0.007537694197558072, value=-2.532423687)
+bgr = st.number_input("Bgr", min_value=-1.727735107, max_value=5.08015862133763, step=0.013615787457457534, value=-1.727735107)
+al = st.number_input("Al", min_value=-0.672554267, max_value=2.4107830163289914, step=0.006166674566801247, value=-0.672554267)
+sod = st.number_input("Sod", min_value=-15.66244722, max_value=2.8997009511666754, step=0.037124296345604615, value=-15.66244722)
+pot = st.number_input("Pot", min_value=-0.819481504, max_value=16.78340056665894, step=0.035205764140927374, value=-0.819481504)
+bu = st.number_input("Bu", min_value=-1.128119215, max_value=7.468757655114903, step=0.01719375374019046, value=-1.128119215)
+
 
 # Collect all inputs in a list
 input_data = [
-    age, baseline_psa, post_treatment_psa, gleason_score, t_stage, n_stage, m_stage, 
-    bcr_status, time_to_recurrence, family_history, comorbidities, psa_month_1, psa_month_3, 
-    psa_month_6, psa_month_12, race_black, race_other, race_white, ethnicity_non_hispanic, 
-    region_north, region_south, region_west, treatment_radiation, treatment_surgery
-]
+    home, pcv, rc, sc, sg, bgr, al, sod, pot, bu ]
 
 # Prediction button
 if st.button("Predict"):
@@ -59,6 +42,6 @@ if st.button("Predict"):
     
     # Display the prediction result
     if prediction == 1:
-        st.error("Cancer may occur again.")
+        st.error("Machine predict CKD , Please meet doctor soon")
     else:
-        st.success("Cancer may not occur again.")
+        st.success("Machine predict, you are safe")
