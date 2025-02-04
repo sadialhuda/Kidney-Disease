@@ -34,7 +34,7 @@ bu = st.number_input("Blood Urea", min_value=-1.128119215, max_value=7.468757655
 
 # Collect all inputs in a list
 input_data = [
-    home, pcv, rc, sc, sg, bgr, al, sod, pot, bu ]
+    hemo, pcv, rc, sc, sg, bgr, al, sod, pot, bu ]
 
 # Prediction button
 if st.button("Predict"):
