@@ -12,7 +12,7 @@ def predict(input_data):
     return prediction[0]  # Return the single prediction value
 
 # Streamlit app code
-st.title("Kidney Disease Prediction")
+st.title("NefroAi: Kidney Disease Prediction")
 
 st.markdown("""
 This app predicts ckd disease. 
